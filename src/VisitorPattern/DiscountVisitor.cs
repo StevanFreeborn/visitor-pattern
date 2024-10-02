@@ -4,11 +4,17 @@ class DiscountVisitor : IVisitor
 {
   private double _savings;
 
+  private void Reset()
+  {
+    _savings = 0.0;
+  }
+
   public void Print()
   {
     Console.WriteLine();
     Console.WriteLine($"Total savings: {Math.Round(_savings, 2)}");
     Console.WriteLine();
+    Reset();
   }
 
   public void VisitBook(Book book)

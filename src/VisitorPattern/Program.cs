@@ -10,16 +10,9 @@ IVisitor[] visitors = [
   new SalesVisitor(),
 ];
 
+var cart = new ObjectStructure(items);
+
 foreach (var visitor in visitors)
 {
-  foreach (var item in items)
-  {
-    item.Accept(visitor);
-  }
-
-  visitor.Print();
-}
-
-class ObjectStructure
-{
+  cart.ApplyVisitor(visitor);
 }
